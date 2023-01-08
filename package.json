@@ -15,12 +15,18 @@
     "cy:recordDashboard": "npx cypress run --record --key d42d4ae7-992a-41fb-87d6-055bf25d6f5f --reporter mochawesome --parallel",
     "cy:registerPageFirefoxHeadless": "npx cypress run --spec \"cypress/integration/tests/RegisterPageTest.js\" --browser firefox --headless --record --key d42d4ae7-992a-41fb-87d6-055bf25d6f5f --reporter mochawesome",
     "cy:registerPageChromeHeaded": "npx cypress run --spec \"cypress/integration/tests/RegisterPageTest.js\" --browser chrome --headed --record --key d42d4ae7-992a-41fb-87d6-055bf25d6f5f --reporter mochawesome",
-    "cy:sorry-cypress:parallel": "CYPRESS_API_URL=http://localhost:1234/ npx cy2 run --spec cypress/integration/tests/LoginPageTest.js --browser firefox --parallel --record --key d42d4ae7-992a-41fb-87d6-055bf25d6f5f --ci-build-id cypress-parallel"
+    "cy:sorry-cypress:parallel": "CYPRESS_API_URL=http://localhost:1234/ npx cy2 run --spec cypress/integration/tests/LoginPageTest.js --browser firefox --parallel --record --key d42d4ae7-992a-41fb-87d6-055bf25d6f5f --ci-build-id cypress-parallel",
+    "____________________": "____________________",
+    "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
+    "delete-junit-report-files": "rm -rf cypress/results/* || true"
   },
   "author": "Dzmitry Razhkou",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "cypress": "^12.3.0"
+    "cypress": "^12.3.0",
+    "cypress-multi-reporters": "^1.6.2",
+    "mocha-junit-reporter": "^2.2.0"
   }
 }

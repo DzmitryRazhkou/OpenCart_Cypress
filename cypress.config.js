@@ -15,6 +15,16 @@ module.exports = defineConfig({
     runMode: 2,
   },
 
+  reporter: "cypress-multi-reporters",
+  reporterOptions: {
+    configFile: "reporter-config.json",
+  },
+
+  reporterEnabled: "spec, mocha-junit-reporter",
+  mochaJunitReporterReporterOptions: {
+    mochaFile: "cypress/results/junit/results-[hash].xml",
+  },
+
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
