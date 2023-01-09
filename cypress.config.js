@@ -2,6 +2,7 @@ const cypress = require("cypress");
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: "dddqcq",
   chromeWebSecurity: true,
   defaultCommandTimeout: 20000,
   pageLoadTimeout: 30000,
@@ -13,6 +14,7 @@ module.exports = defineConfig({
 
   retries: {
     runMode: 2,
+    openMode: 1,
   },
 
   reporter: "cypress-multi-reporters",

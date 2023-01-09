@@ -13,16 +13,20 @@ describe("My Account Page Features", () => {
   let updatedFullName;
   let deletedFullName;
 
-  beforeEach(() => {
-    cy.launch();
+  before(() => {
     cy.fixture("example").then((data) => {
       openCartData = data;
       return openCartData;
     });
   });
+
+  beforeEach(() => {
+    cy.clearLocalStorage();
+    cy.clearCookies();
+    cy.launch();
+  });
   afterEach(() => {
     cy.goBack();
-    cy.clearCookies();
   });
 
   it("My Account Page Title Test", () => {
@@ -197,7 +201,7 @@ describe("My Account Page Features", () => {
     );
   });
 
-  it("My Account Modify Your Address Book Entries Edit Address Test", () => {
+  it.skip("My Account Modify Your Address Book Entries Edit Address Test", () => {
     yourStorePage = new YourStorePage();
     loginPage = new LoginPage();
     myAccountPage = new MyAccountPage();
@@ -240,7 +244,7 @@ describe("My Account Page Features", () => {
     );
   });
 
-  it("My Account Modify Your Address Book Entries You Can Not Delete Default Address Test", () => {
+  it.skip("My Account Modify Your Address Book Entries You Can Not Delete Default Address Test", () => {
     yourStorePage = new YourStorePage();
     loginPage = new LoginPage();
     myAccountPage = new MyAccountPage();

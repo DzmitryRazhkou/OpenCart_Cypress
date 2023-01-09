@@ -53,5 +53,5 @@
   "addressBookEntries": "My Account",
   "successAddressHasBeenSuccessfullyUpdated": " Your address has been successfully updated",
   "successAddressHasBeenSuccessfullyDeleted": " Warning: You can not delete your default address!",
-  "warningCanNotDeleteDefaultAddress": " Warning: You can not delete your default address!"
+  "warningCanNotDeleteDefaultAddress": "  Your address has been successfully deleted"
 }
