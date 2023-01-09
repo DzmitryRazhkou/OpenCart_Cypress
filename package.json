@@ -9,6 +9,7 @@
     "cy:headed:chrome": "npx cypress run --spec cypress/integration/tests/*.js --browser chrome --headed",
     "cy:chrome:headed:LoginPageTest": "npx cypress run --spec cypress/integration/tests/LoginPageTest.js --browser chrome --headed",
     "cy:firefox:headless:LoginPageTest": "npx cypress run --spec cypress/integration/tests/LoginPageTest.js --browser firefox",
+    "cy:firefox:headless:RegisterPageTest": "npx cypress run --spec cypress/integration/tests/RegisterPageTest.js --record --key 8dc63ca0-a380-4b6b-ac86-719a7767b29c --browser firefox",
     "_____________________": "_____________________",
     "cy:recordDashboard": "npx cypress run --record --key 8dc63ca0-a380-4b6b-ac86-719a7767b29c --browser firefox",
     "cy:sorry-cypress:parallel": "CYPRESS_API_URL=http://localhost:1234/ npx cy2 run --spec cypress/integration/tests/LoginPageTest.js --browser firefox --parallel --record --key d42d4ae7-992a-41fb-87d6-055bf25d6f5f --ci-build-id cypress-parallel",
@@ -20,7 +21,8 @@
     "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
     "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
     "_______________________": "______________________",
-    "cy:smokeSuite": "npm run delete-junit-results && npm run delete-mochawesome-report && npm run cy:recordDashboard && mochawesome-merge"
+    "cy:smokeSuite": "npm run delete-junit-results && npm run delete-mochawesome-report && npm run cy:recordDashboard && mochawesome-merge",
+    "cy:smokeRegisterPage": "npm run delete-junit-results && npm run delete-mochawesome-report && npm run cy:firefox:headless:RegisterPageTest && mochawesome-merge"
   },
   "author": "Dzmitry Razhkou",
   "license": "ISC",
