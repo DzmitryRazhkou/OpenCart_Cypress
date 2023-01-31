@@ -39,7 +39,7 @@ describe("Your Store Page Features", () => {
     yourStorePage.selectCurrency(currency, currencySign);
   });
 
-  it("Your Store Page Currency Select Test", () => {
+  it.only("Your Store Page Intercept Currency Test", () => {
     yourStorePage = new YourStorePage();
     const currency = openCartData.currency;
     const currencySign = openCartData.currencySign;
